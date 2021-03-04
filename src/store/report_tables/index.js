@@ -6,7 +6,7 @@ import complex from "./3/Complex"
 import education from "./3/Education"
 import reconstruction from "./3/Reconstruction"
 import sdo from "./3/SDO"
-import stipend from "./3/Stipend"
+import programs from "./3/Programs"
 import teaching_aids from "./3/Teachingaids"
 import circle from "./4/Circle"
 import events from "./4/Events"
@@ -36,7 +36,7 @@ export default {
     education,
     reconstruction,
     sdo,
-    stipend,
+    programs,
     teaching_aids,
     circle,
     institutions,

@@ -1,7 +1,6 @@
 export default {
-  deleteUser(state,id){
+  deleteUser(state,index){
     try{
-      const index = state.users.indexOf({id:id})
       state.users.splice(index, 1);
     }catch (e) {
       console.error(e)

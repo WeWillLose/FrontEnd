@@ -1,11 +1,20 @@
 import api from "src/api/api";
-
+function getIndexInSourceById(source,id){
+  for(let i=0;i< source.length;i++){
+    if(source[i].id ==id){
+      return i;
+    }
+  }
+  return -1;
+}
 export default {
     async deleteUser(context,user){
       try{
         const res = await api.deleteUser(user)
         const data = res.data
-        context.commit("deleteUser",user.id)
+        const ind = getIndexInSourceById(context.state.users,user.id);
+        console.log(ind)
+        context.commit("deleteUser",ind)
         return true
       }catch (e) {
         if(e.response.status == 403){
@@ -48,14 +57,7 @@ export default {
     try{
       const res = await api.editUser(user)
       const data = res.data
-      let index = -1;
-      for(let i=0;i< context.state.users.length;i++){
-        if(context.state.users[i].id == data.id){
-          index = i;
-        }
-      }
-      console.log(index)
-      context.commit("editUser",{index:index,user:data})
+      context.commit("editUser",{index:getIndexInSourceById(context.state.users, data.id),user:data})
       context.commit("setDefaultEditedUser")
       return true
     }catch (e) {
@@ -71,14 +73,7 @@ export default {
     try{
       const res = await api.resetPassword(user)
       const data = res.data
-      let index = -1;
-      for(let i=0;i< context.state.users.length;i++){
-        if(context.state.users[i].id == data.id){
-          index = i;
-        }
-      }
-      console.log(index)
-      context.commit("editUser",{index:index,user:data})
+      context.commit("editUser",{index:getIndexInSourceById(context.state.users, data.id),user:data})
       context.commit("setDefaultEditedUser")
       return true
     }catch (e) {
