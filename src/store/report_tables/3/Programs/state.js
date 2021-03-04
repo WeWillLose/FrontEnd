@@ -20,8 +20,9 @@ export default {
     {
       name: "quantity",
       align: "center",
-      label: "Характеристика состояния",
+      label: "Количество",
       field: "quantity",
+      style: "width:100px"
     },
     {
       name: "score",
@@ -30,6 +31,12 @@ export default {
       label: "Баллы",
       field: "score",
       style: "width:100px"
+    },
+    {
+      name: "actions",
+      label: "Actions",
+      field: "actions",
+      align: "center",
     },
   ],
   rows: [

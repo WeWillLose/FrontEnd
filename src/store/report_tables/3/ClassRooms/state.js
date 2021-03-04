@@ -16,7 +16,8 @@ export default {
       required: true,
       label: "№ кабинета/лаборатории",
       align: "left",
-      field:"class"
+      field:"class",
+      style: "width:50px",
     },
     {
       name: "status",
@@ -32,6 +33,12 @@ export default {
       field: "score",
       style: "width:100px"
     },
+    {
+      name: "actions",
+      label: "Actions",
+      field: "actions",
+      align: "center",
+    }
   ],
   rows: [
     {

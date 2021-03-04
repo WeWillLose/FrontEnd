@@ -13,7 +13,7 @@ export default {
       name: "quantity",
       label: "Количество проводимых мероприятий, качество документации, отзывы членов МО.",
       align: "left",
-      field:"name"
+      field:"quantity"
     },
     {
       name: "score",
