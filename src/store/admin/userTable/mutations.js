@@ -13,6 +13,38 @@ export default {
     }catch (e) {
       console.error(e)
     }
+  },
+  addUser(state,user){
+    try{
+      state.users.push(user)
+    }catch (e) {
+      console.error(e)
+    }
+  },
+  editUser(state,data){
+    try{
+      Object.assign(state.users[data.index], data.user);
+    }catch (e) {
+      console.error(e)
+    }
+  },
+  setDefaultEditedUser(state){
+    try{
+      Object.assign(state.editedUser, state.defaultUser)
+    }catch (e) {
+      console.error(e)
+    }
+  },
+  setEditedUser(state,user){
+    try{
+      if(!user){
+        this.setDefaultEditedUser()
+      }
+      state.editedUser = user
+    }catch (e) {
+      console.error(e)
+    }
   }
+
 }
 
