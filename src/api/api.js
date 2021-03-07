@@ -12,6 +12,9 @@ export default {
   createToDo: (item) => resource.post(`/api/api/toDo/create/`,item),
   login: (user) => resource.post(`/api/auth/login/`,user),
   deleteUser: (user) => resource.delete(`/api/api/user/${user.id}`),
-  getUsers: () => resource.get(`/api/api/user/all`),
+  getUsers: () => resource.get(`/api/api/user/info/all`),
+  registrationUser: (user) => resource.post(`/api/auth/registration`,user),
+  editUser: (user) => resource.put(`/api/api/user/info/${user.id}`,user),
+  resetPassword: (user) => resource.put(`/api/api/user/password/${user.id}`,user),
 }
 

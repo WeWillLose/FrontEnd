@@ -23,7 +23,8 @@ export default function (/* { ssrContext } */) {
     modules:{
       report_tables,
       to_do,
-
+      class_rooms,
+      programs,
       user,
       admin_table,
     },
@@ -38,9 +39,8 @@ export default function (/* { ssrContext } */) {
           }
           state.user.is_login = localStorage.getItem("is_login") == "true"
         }
-      }
-      class_rooms,
-      programs,
+      },
+
     }
   })
 
